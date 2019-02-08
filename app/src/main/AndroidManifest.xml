@@ -26,8 +26,8 @@
             android:value="@integer/google_play_services_version" />
 <!-- chippin key-->
        <!--<meta-data android:name="botPrimaryToken" android:value="osbJMbGoqM4.cwA.LH4.9O_4dDG_CGXQTZjeX9PDdkNSMJNYIsodSZm7wviwLyk"/>-->
-        <meta-data android:name="botPrimaryToken" android:value="M_IiHLnuTiQ.cwA.SfM.DFaMhPfBton5Xw_4vI3_t6xto2LXmxKNekam5BXe--s"/>
-        <meta-data android:name="botName" android:value="kochrpoc"/>
+        <meta-data android:name="botPrimaryToken" android:value="u76r5S-y-Po.dAA.SwBjAGMAZQA2AHgAVQBmAGIAQwBKADkAdQA0AFAATwBzADUAegBDAFoAagA.MVN7BJC_1AE.AiYzVXkn2r0.mMM-DjnaQi97P5wfVwao_JMSHj-P7a1DUN_mPmLMkfs"/>
+        <meta-data android:name="botName" android:value="kochrassistant"/>
 
     </application>
 

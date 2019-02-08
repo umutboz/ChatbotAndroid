@@ -502,24 +502,47 @@ public class ChatActivity extends AppCompatActivity {
                             if(msgFrom.trim().toLowerCase().equals(botName)) {
                                 if(lastResponseMsgId == "") {
                                     final String  responseMsg = jsonObject.getJSONArray("activities").getJSONObject(arrayLength - 1).get("text").toString();
+                                    if (responseMsg.equalsIgnoreCase("")){
+                                        final String responseAttachment =  jsonObject.getJSONArray("activities").getJSONObject(arrayLength - 1).get("attachments").toString();
+                                        ChatActivity.this.runOnUiThread(new Runnable() {
+                                            public void run() {
+                                                AddResponseToChat(responseAttachment);
+                                                lastResponseMsgId = curMsgId;
+                                            }
+                                        });
+                                    }else
+                                    {
+                                        ChatActivity.this.runOnUiThread(new Runnable() {
+                                            public void run() {
+                                                AddResponseToChat(responseMsg);
+                                                lastResponseMsgId = curMsgId;
+                                            }
+                                        });
+                                    }
 
-                                    ChatActivity.this.runOnUiThread(new Runnable() {
-                                        public void run() {
-                                            AddResponseToChat(responseMsg);
-                                            lastResponseMsgId = curMsgId;
-                                        }
-                                    });
 
                                 }
                                 else if(!lastResponseMsgId.equals(curMsgId))
                                 {
 
                                     final String  responseMsg = jsonObject.getJSONArray("activities").getJSONObject(arrayLength - 1).get("text").toString();
-                                    ChatActivity.this.runOnUiThread(new Runnable() {
-                                        public void run() {
-                                            AddResponseToChat(responseMsg);
-                                            lastResponseMsgId = curMsgId;
-                                        }});
+                                    if (responseMsg.equalsIgnoreCase("")){
+                                        final String responseAttachment =  jsonObject.getJSONArray("activities").getJSONObject(arrayLength - 1).get("attachments").toString();
+                                        ChatActivity.this.runOnUiThread(new Runnable() {
+                                            public void run() {
+                                                AddResponseToChat(responseAttachment);
+                                                lastResponseMsgId = curMsgId;
+                                            }
+                                        });
+                                    }else
+                                    {
+                                        ChatActivity.this.runOnUiThread(new Runnable() {
+                                            public void run() {
+                                                AddResponseToChat(responseMsg);
+                                                lastResponseMsgId = curMsgId;
+                                            }
+                                        });
+                                    }
 
 
                                 }
